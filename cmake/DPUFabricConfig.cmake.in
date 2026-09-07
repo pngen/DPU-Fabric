@@ -1,0 +1,13 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+include("${CMAKE_CURRENT_LIST_DIR}/DPUFabricTargets.cmake")
+
+# Expose the documented canonical target names as aliases.
+foreach(_pkg_name core synthetic system unsupported mp)
+  if(TARGET DPUFabric::dpufabric_${_pkg_name} AND NOT TARGET DPUFabric::${_pkg_name})
+    add_library(DPUFabric::${_pkg_name} ALIAS DPUFabric::dpufabric_${_pkg_name})
+  endif()
+endforeach()
+
+check_required_components(DPUFabric)

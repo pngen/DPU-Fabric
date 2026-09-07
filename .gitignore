@@ -1,0 +1,22 @@
+# Build directories
+/build/
+/build-*/
+/cmake-build-*/
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.exp
+*.dpu
+*.tmp
+CMakeCache.txt
+CMakeFiles/
+ninja*
+*.ninja
+/staging/
+DartConfiguration.tcl
+# Test scratch
+*.dpu
+/Test/
